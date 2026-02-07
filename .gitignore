@@ -1,0 +1,22 @@
+# Ambiente virtual
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+
+# Arquivos grandes
+*.dll
+*.so
+*.exe
+*.zip
+*.mp4
+*.mov
+
+# Logs e caches
+*.log
+*.cache
+

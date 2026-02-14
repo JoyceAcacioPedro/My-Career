@@ -1,59 +1,85 @@
-# 🚀 My Career - AI Job Advisor
 
-**Mu Career** is a smart, **100% private** career assistant that uses Local AI to analyze resumes and find job openings in real-time. Unlike other solutions, this project does not send your data to the cloud (like OpenAI); everything is processed directly on your CPU.
+# 🚀 Mu Career Advisor
 
-## 🛠️ Tech Stack
+### 🛠️ Technologies
 
-* **Python 3.10+**: Core language.
-* **Streamlit**: Fast and intuitive web interface.
-* **LlamaIndex**: Framework for data orchestration and **RAG (Retrieval-Augmented Generation)**.
-* **GPT4All**: Engine to run the **Llama 3.2 1B-Instruct** model locally.
-* **HuggingFace Embeddings**: `bge-small-en-v1.5` model to transform text into mathematical vectors.
-* **Adzuna API**: Integration with external services for real-time job searching.
+* **Language:** Python 3.10+
+* **AI Framework:** LlamaIndex (RAG Orchestration)
+* **LLM Engine:** GPT4All (Local Model Execution)
+* **Model:** Llama 3.2 1B-Instruct (Quantized GGUF)
+* **Embeddings:** HuggingFace `bge-small-en-v1.5`
+* **Interface:** Streamlit
+* **API:** Adzuna Job Search API
 
-## 🌟 Key Features
+---
 
-1. **Resume Parsing**: Support for `.pdf` and `.docx` files.
-2. **Critical Analysis**: Llama 3.2 evaluates resume quality, keywords, and industry relevance.
-3. **Live Job Search**: Automatic extraction of the ideal job title followed by a real-time search via the Adzuna API.
-4. **Total Privacy**: Processing is strictly local. Your data never leaves your machine.
+### 🌟 Features (What you can do)
 
-## 🏗️ Project Architecture
+* **Secure Upload:** Drag and drop your `.pdf` or `.docx` resume safely.
+* **Instant Analysis:** Get a professional breakdown of your resume's strengths and weaknesses.
+* **Rating System:** Receive scores on content quality, keywords, and market relevance.
+* **Live Job Matching:** Automatically search for active job vacancies that match your profile.
+* **Data Privacy:** Experience AI without an internet connection (except for job searching).
 
-The project implements the **RAG (Retrieval-Augmented Generation)** technique. The workflow is as follows:
+---
 
-1. The document is loaded and split into chunks.
-2. These chunks are converted into vectors (numbers) and stored in a local index.
-3. When a user asks a question, the system retrieves the most relevant parts of the resume and feeds them to the Llama 3.2 model to generate an accurate response.
+### ⌨️ Keyboard Shortcuts (Streamlit Standard)
 
-## 🚀 How to Run the Project
+* **`R`**: Rerun the application.
+* **`C`**: Clear the cache (useful if you change the model file).
+* **`Enter`**: Confirm file upload or trigger the analysis button when focused.
 
-1. **Clone the repository:**
+---
+
+### 🏗️ The Creation Process
+
+The development followed a **"Privacy-First"** philosophy.
+
+1. **Environment Setup:** Created a virtual environment to manage complex AI dependencies.
+2. **Model Selection:** Tested different GGUF models to find the perfect balance between speed and reasoning (Llama 3.2 1B).
+3. **Bridge Building:** Developed a `CustomLLM` adapter class to connect the GPT4All local engine to the LlamaIndex framework.
+4. **RAG Implementation:** Configured a vector store to index resume data for precise context retrieval.
+5. **API Integration:** Connected the Adzuna service to bridge the gap between "AI analysis" and "Real-world action."
+
+---
+
+### 📝 What I Learned
+
+* **LLM Adapters:** How to write custom classes to make incompatible libraries work together.
+* **Resource Management:** Using `@st.cache_resource` to keep large models in RAM, preventing system lag.
+* **Prompt Engineering:** How to guide small 1B models to stay focused on specific tasks without "hallucinating."
+* **RAG Architecture:** The power of giving an AI a specific "memory" (the resume) rather than relying on its general knowledge.
+
+---
+
+### 📈 How it can be Improved
+
+* **Cover Letter Generation:** Add a feature to draft a personalized cover letter for the found jobs.
+* **Multi-language Support:** Expand the prompt templates to analyze resumes in Portuguese and Spanish.
+* **Database Integration:** Allow users to save their analysis history locally using SQLite.
+* **Better Models:** Testing Llama 3.2 3B or Mistral models for even deeper reasoning if hardware allows.
+
+---
+
+### 🚀 How to Run
+
+1. **Clone & Enter:**
 ```bash
-git clone https://github.com/your-username/mu-career-advisor.git
-cd mu-career-advisor
+git clone https://github.com/JoyceAcacioPedro/My-Career.git
 
 ```
 
 
-2. **Create a virtual environment and install dependencies:**
+2. **Install Requirements:**
 ```bash
-python -m venv venv
-# On Windows:
-venv\Scripts\activate  
-# On macOS/Linux:
-source venv/bin/activate
-
 pip install streamlit llama-index gpt4all requests docx2txt llama-index-embeddings-huggingface
 
 ```
 
 
-3. **Model Configuration:**
-* Ensure the `Llama-3.2-1B-Instruct-Q4_0.gguf` file is located in your GPT4All local path.
-
-
-4. **Launch the application:**
+3. **Model Path:**
+Open `My_Career.py` and ensure the `model_path` matches your local GPT4All folder.
+4. **Run:**
 ```bash
 streamlit run My_Career.py
 
@@ -61,11 +87,15 @@ streamlit run My_Career.py
 
 
 
-## 📝 Lessons Learned
+---
 
-This project was a technical challenge that involved:
+### 📺 Demo Video
 
-* **Solving Incompatibilities**: Implementing a `CustomLLM` class to integrate GPT4All with LlamaIndex, bypassing unstable external packages.
-* **Performance Optimization**: Using `@st.cache_resource` to manage heavy models in RAM efficiently.
-* **Prompt Engineering**: Refining instructions for small language models (1B parameters) to ensure high-quality output.
+https://youtu.be/KZlMncvWR2k
+
+> "Watch how Mu Career Advisor transforms a raw resume into a targeted career strategy in seconds."
+
+---
+
+**Developed with 🧠 by Joyce Pedro**
 

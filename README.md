@@ -1,5 +1,5 @@
 
-# 🚀 Mu Career Advisor
+# 🚀 My Career Advisor
 
 ### 🛠️ Technologies
 
@@ -93,7 +93,7 @@ streamlit run My_Career.py
 
 https://youtu.be/KZlMncvWR2k
 
-> "Watch how Mu Career Advisor transforms a raw resume into a targeted career strategy in seconds."
+> "Watch how My Career Advisor transforms a raw resume into a targeted career strategy in seconds."
 
 ---
 
